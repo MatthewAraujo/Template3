@@ -1,0 +1,27 @@
+.link {
+  font-size: 1.3rem;
+  position: relative;
+  padding-right: 1rem;
+  text-transform: uppercase;
+
+  &::after{
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background-color: var(--black);
+      transition: width .6s .2s;
+      position:absolute;
+      bottom: -2px;
+      left: 0;
+  }
+
+
+  &.active {
+    font-weight: 500;    
+      &::after, &::before {
+            left: -25px;
+            width: 50%;
+      }    
+  }
+}
