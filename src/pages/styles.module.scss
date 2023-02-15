@@ -1,0 +1,15 @@
+.container{
+  @media (min-width: 768px) {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    }
+
+    main{
+      padding-top: 6rem;
+
+      @media (min-width: 768px) {
+        padding-top: 0;
+        }
+    }
+}

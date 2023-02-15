@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { X } from 'phosphor-react'
 import { useEffect, useState } from 'react'
 import Menu from './menu'
@@ -73,6 +74,7 @@ export default function Header() {
         width={170}
         height={60}
         loading="lazy"
+        className={styles.logo}
       />
       <nav className={!modal ? styles.nav : styles.active}>
         <Image
@@ -81,7 +83,17 @@ export default function Header() {
           width={170}
           height={60}
           loading="lazy"
+          className={styles.logo}
         />
+        <Image
+          src="/logo.png"
+          alt="logo"
+          width={193}
+          height={200}
+          loading="lazy"
+          className={styles.logoDesktop}
+        />
+
         {links.map((link) => (
           <Menu
             key={link.id}
@@ -94,6 +106,7 @@ export default function Header() {
             {link.text}
           </Menu>
         ))}
+        <Link href="/Politica">Política de Privacidade</Link>
       </nav>
       {!modal ? (
         <Image
@@ -103,6 +116,7 @@ export default function Header() {
           height={40}
           loading="lazy"
           onClick={handleOpenModal}
+          className={styles.modal}
         />
       ) : (
         <X className={styles.xis} size={30} onClick={handleCloseModal} />

@@ -1,0 +1,76 @@
+.container{
+ position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--white);
+  padding-top: 10px;
+  z-index: 999;
+  @media (min-width: 768px) {
+    position: sticky;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 30px;
+    }
+
+  .logo{
+
+    @media (min-width: 768px) {
+      display: none;
+      }  
+    }
+
+    .modal{
+      @media (min-width: 768px) {
+        display: none;
+        }  
+
+    }
+
+  .nav{
+    position: fixed;
+    top: 0;
+    transform: translateX(-100%);
+
+    @media (min-width: 768px) {
+      position: static;
+      transform: translateX(0);
+      display: flex;
+      gap: 2rem;
+      flex-direction: column;
+      }  
+    }
+
+  .active{
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    width: 70%;
+    height: 100vh;
+    background-color: var(--orange);
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    gap: 2rem;
+    z-index: 999;
+    padding-top: 1rem;
+    transition: transform .6s ease-in-out; 
+
+    .logoDesktop{
+      display: none;
+
+      @media (min-width: 768px) {
+        display: block;
+        }  
+    }
+  }
+
+  
+
+}
