@@ -74,31 +74,26 @@ export default function Header() {
         height={60}
         loading="lazy"
       />
-      <nav className={styles.nav}>
-        <div className={!modal ? styles.content : styles.active}>
-          <div className={styles.header}>
-            <Image
-              src="/logomenu.png"
-              alt="logo"
-              width={170}
-              height={60}
-              loading="lazy"
-            />
-          </div>
-
-          {links.map((link) => (
-            <Menu
-              key={link.id}
-              id={link.id}
-              href={link.href}
-              isActive={link.id === isActive}
-              setIsActive={setIsActive}
-              setModal={setModal}
-            >
-              {link.text}
-            </Menu>
-          ))}
-        </div>
+      <nav className={!modal ? styles.nav : styles.active}>
+        <Image
+          src="/logomenu.png"
+          alt="logo"
+          width={170}
+          height={60}
+          loading="lazy"
+        />
+        {links.map((link) => (
+          <Menu
+            key={link.id}
+            id={link.id}
+            href={link.href}
+            isActive={link.id === isActive}
+            setIsActive={setIsActive}
+            setModal={setModal}
+          >
+            {link.text}
+          </Menu>
+        ))}
       </nav>
       {!modal ? (
         <Image

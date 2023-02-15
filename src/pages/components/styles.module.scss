@@ -6,40 +6,35 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all .6s;
 
 
   .nav{
     position: fixed;
     top: 0;
-    left: -200%;
+    transform: translateX(-100%);
+
 
     
-    .content{
-      display:none;
 
-      
-    }
-    .active yarn {
-      position: fixed;
-      height: 100vh;
-      width: 70vw;
-      background: #F3AD3B;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      padding-left: 40px;
-      border-radius:0px 25px 25px 0px;
-      left: 0;
-      transition: left 0.3s;
-
-      .header{
-        margin-top: 1rem;
-        margin-bottom: 5rem;
-      }
-
-    }
+    
   }
+  .active{
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    width: 70%;
+    height: 100vh;
+    background-color: var(--orange);
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    gap: 2rem;
+    z-index: 999;
+    padding-top: 1rem;
+    transition: transform .6s .2s;
+  }
+
   
 
 }
