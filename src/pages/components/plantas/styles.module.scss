@@ -1,0 +1,112 @@
+.container{
+  display: block;
+  width: calc(100vw - 280px);
+  height: 80vh;
+
+ 
+
+  .title{
+    width: 80%;
+    margin-top: 48px;
+    padding: 0 30px;
+    border-bottom: 2px solid #FFB41D;
+    padding-bottom: 5px;
+    margin-bottom: 1rem;
+
+    @media (min-width: 769px) {
+  
+      display: none;
+    }
+  }
+
+  .plantas{
+    width: 100%;
+    height: 100%;
+
+    @media (min-width: 768px) {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 100px 0px 60px;
+    }
+
+   .planta{
+    position: relative;
+    width: 100%;
+    .lupa{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      box-sizing: content-box;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 50%;
+      
+      @media (min-width: 769px) {
+        left: 0;
+      }
+    }
+   }
+
+    .button{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      margin-top: 1rem;
+      
+      @media (min-width: 769px) {
+        flex-direction: column;
+        width: 50%;
+        margin-top: 0;
+        justify-content: flex-start;
+        gap: 1rem;
+      }
+
+      .title2{
+        display: none;
+
+        @media (min-width: 769px) {
+          display: block;
+          width: 90%;
+          margin-top: 48px;
+          padding: 0 30px;
+          border-bottom: 2px solid #FFB41D;
+          padding-bottom: 5px;
+          margin-bottom: 1rem;
+        }
+      }
+
+      button{
+        width: 30%;
+        height: 3rem;
+        border: none;
+        border-radius: 10px;
+        background: #E8E8E8;
+        color: #000;
+        font-weight: 600;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        @media (min-width: 769px) {
+          width: 90%;
+        }
+        
+        &:active{
+          background: #FFB41D;
+        }
+
+        &.Active{
+          background: #FFB41D;
+        }
+      }
+    }
+  }
+}

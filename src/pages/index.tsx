@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Banner from './components/banner'
 import Empreendimento from './components/empreendimento'
 import Header from './components/header/header'
+import Plantas from './components/plantas'
 import styles from './styles.module.scss'
 
 export default function Home() {
@@ -15,7 +16,8 @@ export default function Home() {
       </div>
       <main>
         <Banner />
-        <Empreendimento />
+        {/* <Empreendimento /> */}
+        <Plantas />
       </main>
     </div>
   )

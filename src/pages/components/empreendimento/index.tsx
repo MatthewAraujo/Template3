@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import { Scrollbar } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css/scrollbar'
+
 import styles from './styles.module.scss'
 
-import 'swiper/css'
+import 'swiper/scss'
 
 export default function Empreendimento() {
   return (
@@ -28,12 +30,16 @@ export default function Empreendimento() {
         <div className={styles.containerSwiper}>
           <Swiper
             spaceBetween={10}
-            slidesPerView={2.5}
+            slidesPerView={3}
             grabCursor={true}
+            scrollbar={{
+              draggable: true,
+              snapOnRelease: true,
+            }}
             modules={[Scrollbar]}
             className={styles.swiper}
           >
-            <SwiperSlide>
+            <SwiperSlide className={styles.swiperSlide}>
               <Image
                 src="/conforto.png"
                 alt="Sala"
@@ -42,7 +48,7 @@ export default function Empreendimento() {
                 loading="lazy"
               />
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide className={styles.swiperSlide}>
               <Image
                 src="/estar.png"
                 alt="Sala"
@@ -51,7 +57,7 @@ export default function Empreendimento() {
                 loading="lazy"
               />
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide className={styles.swiperSlide}>
               <Image
                 src="/sala2.png"
                 alt="Sala"
@@ -64,7 +70,35 @@ export default function Empreendimento() {
         </div>
       </div>
       <div className={styles.containerRight}>
-        <h1>swiper</h1>
+        <Swiper spaceBetween={0} slidesPerView={1} className={styles.swiper}>
+          <SwiperSlide>
+            <Image
+              src="/conforto.png"
+              alt="Sala"
+              width={194}
+              height={341}
+              loading="lazy"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src="/estar.png"
+              alt="Sala"
+              width={194}
+              height={341}
+              loading="lazy"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src="/sala2.png"
+              alt="Sala"
+              width={194}
+              height={341}
+              loading="lazy"
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   )

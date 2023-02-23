@@ -4,7 +4,7 @@
   grid-gap: 2rem;
   width:100%;
 
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     grid-template-columns: 1fr 1fr;
     width: calc(100vw - 280px);
   }
@@ -16,6 +16,12 @@
     align-items: center;
     width: 100%;
     height: 80vh;
+
+    @media (min-width: 769px) {
+      width: calc(50vw - 280px);
+      height: 100%;
+    }
+
     
     .title{
       width: 100%;
@@ -41,11 +47,22 @@
         width: 100vw;
         height: 100%;
 
+        @media (min-width: 768px) {
+          width: 50vw;
+          height: 100%;
+        }
+
+        
+
         img{
           width: 100%;
           height: 100%;
           object-fit: cover;
           border-radius: 20px 0 50px 0;
+
+          @media (min-width: 768px) {
+            max-width: 190px;
+          }
         }
       }
     }
@@ -54,6 +71,25 @@
 
   .containerRight{
     display: none;
+
+    @media (min-width: 769px) {
+      display: block;
+      width: 50vw;
+
+      .swiper{
+        width: 100%;
+        height: 100vh;
+        border-radius: 600px 0px 100px;
+
+
+        img{
+          width: 100%;
+          height: 100%;
+
+        }
+      }
+
+    }
 
   }
 
