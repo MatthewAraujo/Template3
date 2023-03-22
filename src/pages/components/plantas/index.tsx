@@ -1,12 +1,17 @@
 import Image from 'next/image'
-import { MagnifyingGlass } from 'phosphor-react'
+import { MagnifyingGlass, X } from 'phosphor-react'
 import { useState } from 'react'
 import styles from './styles.module.scss'
 export default function Plantas() {
   const [image, setChangeImage] = useState('/1quarto.png')
+  const [modalImage, setModalImage] = useState(false)
 
   function handleChangeImage(value: string) {
     setChangeImage(value)
+  }
+
+  function handleModalImage() {
+    setModalImage(!modalImage)
   }
 
   return (
@@ -15,7 +20,7 @@ export default function Plantas() {
         <h1>Plantas</h1>
       </div>
       <div className={styles.plantas}>
-        <div className={styles.planta}>
+        <div className={!modalImage ? styles.planta : styles.plantaModal}>
           <Image
             alt="1 quarto"
             src={image}
@@ -23,7 +28,15 @@ export default function Plantas() {
             height={1081}
             loading="lazy"
           />
-          <MagnifyingGlass size={32} className={styles.lupa} />
+          {!modalImage ? (
+            <MagnifyingGlass
+              size={32}
+              className={styles.lupa}
+              onMouseUp={handleModalImage}
+            />
+          ) : (
+            <X size={32} className={styles.lupa} onMouseUp={handleModalImage} />
+          )}
         </div>
         <div className={styles.button}>
           <div className={styles.title2}>
